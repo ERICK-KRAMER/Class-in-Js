@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div#resp {
+            border: 2px solid black;
+            padding: .5rem;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="#" method="get">
+        <div class="name">
+            <label>Nome</label>
+            <input type="text" id="name">
+        </div>
+        <div class="doors">
+            <label>Portas</label>
+            <input type="text" id="doors">
+        </div>
+        <div class="shild">
+            <label>Blindagem</label>
+            <input type="text" id="shild">
+        </div>
+        <div class="munition">
+            <label>Muniçao</label>
+            <input type="text" id="munition">
+        </div>
+        <div class="radio">
+            <input type="radio" name="type" id="Militar"><span>Militar</span>
+            <input type="radio" name="type" id="Normal"><span>Normal</span>
+        </div>
+        <div class="add">
+            <button type="submit">Adicionar</button>
+        </div>
+    </form>
+    <div id="resp"></div>
+</body>
+</html>
