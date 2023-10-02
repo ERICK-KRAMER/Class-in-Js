@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../Anime.js" defer></script>
+    <title>anime</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        div.anime {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        img {
+            height: 300px;
+            width: 300px;
+            background-size: cover;
+            background-position: top center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adiciona Anime</h1>
+    <form action="#" method="get">
+        <div class="name">
+            <label for="name">
+                <input type="text" id="name" placeholder="Digite o anime que deseja adicionar">
+        </div>
+        <div class="genero">
+            <label for="genero">
+                <input type="text" id="genero" placeholder="Genero">
+        </div>
+        <div class="image">
+            <label for="url">
+                <input type="text" id="url" placeholder="Coloque a url da Imgem">
+        </div>
+        <div class="btn">
+            <button type="submit" id="add">Adicionar</button>
+        </div>
+    </form>
+    <div class="anime" id="anime">
+        <!-- <div class="anime">
+            <img src="" alt="">
+        </div> -->
+    </div>
+</body>
+</html>

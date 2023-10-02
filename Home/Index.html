@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../Carros.Js" defer></script>
     <title>Carros</title>
     <style>
         *{
@@ -10,7 +11,14 @@
             padding: 0;
             box-sizing: border-box;
         }
-        div#resp {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        div#carro {
             border: 2px solid black;
             padding: .5rem;
         }
@@ -29,20 +37,22 @@
         </div>
         <div class="shild">
             <label>Blindagem</label>
-            <input type="text" id="shild">
+            <input type="text" id="shild" disabled value="0">
         </div>
         <div class="munition">
             <label>Muniçao</label>
-            <input type="text" id="munition">
+            <input type="text" id="munition" disabled value="0">
         </div>
         <div class="radio">
+            <input type="radio" name="type" id="Normal" checked><span>Normal</span>
             <input type="radio" name="type" id="Militar"><span>Militar</span>
-            <input type="radio" name="type" id="Normal"><span>Normal</span>
         </div>
         <div class="add">
-            <button type="submit">Adicionar</button>
+            <button type="submit" id="btn">Adicionar</button>
         </div>
     </form>
-    <div id="resp"></div>
+    <div id="carro" class="carro">
+        <!-- <div class="carro">Golf</div> -->
+    </div>
 </body>
 </html>
