@@ -53,11 +53,33 @@ camisa[1].desconto(10);
 caneca[1].aumento(5);
 camisa[2].desconto(15);
 
-camisa.find((item) => {
+camisa.map((item) => {
+    if(item.estoque <= 0) {
+        item.estoque = 20
+    }
+})
+camisa.find(item => {
     if(item.nome === 'regata'){
-        item.estoque = 10
+        item.estoque += 10;
+    }
+    if(item.nome === 'social'){
+        item.estoque += 15;
+    }
+    if(item.nome === 'casaco'){
+        item.estoque += 5;
+    }
+})
+camisa.filter(item =>{
+    if(item.estoque < 30){
+        item.estoque += 30;
+    }
+})
+const filter = camisa.filter(item => {
+    if(item.nome === 'casaco'){
+        return item
     }
 })
 
+console.log(filter)
 console.log(camisa)
 console.log(caneca)
