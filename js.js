@@ -10,11 +10,11 @@ Produto.prototype.aumento = function(valor) {
 Produto.prototype.desconto = function(valor) { 
     this.preço = this.preço - (this.preço *(valor/100))
 }
-
 class Camisa extends Produto{
     constructor(nome, preço, cor){
         super(nome, preço);
         this.cor = cor;
+        this.estoque = 0
         Object.defineProperty(this, 'estoque',{
             configurable: true,
             enumerable: true,
@@ -27,7 +27,6 @@ class Camisa extends Produto{
                 estoque = valor;
             }
         })
-        this.estoque = 0
     }
 } 
 class Caneca extends Produto {
