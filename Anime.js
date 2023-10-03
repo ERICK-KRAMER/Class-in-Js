@@ -3,10 +3,9 @@ const genero = document.querySelector('#genero')
 const url = document.querySelector('#url')
 const button = document.querySelector('#add')
 const anime = document.querySelector('#anime')
+const filter = document.querySelector("#filter")
 
 const a_animes = [];
-
-// https://www.youtube.com/
 
 class Midia {
     constructor(nome,genero,url){
@@ -54,5 +53,38 @@ const removeAnime = () => {
     })
 }
 
+filter.addEventListener("click", (evt) => {
+
+    const searchTerm = filter.value.trim().toLowerCase();
+
+    const filteredAnimes = a_animes.filter(anime => {
+        return anime.nome.toLowerCase().includes(searchTerm);
+    });
+
+    anime.innerHTML = "";
+
+    if (filteredAnimes.length > 0) {
+        filteredAnimes.forEach((item, index) => {
+            const div = document.createElement("div");
+            div.setAttribute("class", "anime");
+
+            const img = document.createElement("img");
+            img.setAttribute("src", `${item.url}`);
+            img.setAttribute("alt", `${item.nome}`);
+            div.appendChild(img);
+
+            const info = document.createElement("p");
+            info.innerHTML = `Nome: ${item.nome}, Gênero: ${item.genero} 
+            <button type="submit" class="remove-btn" data-index="${index}">Remover</button>`;
+
+            div.appendChild(info);
+
+            anime.appendChild(div);
+        });
+        removeAnime();
+    } else {
+        alert('Nenhum anime encontrado com esse nome');
+    }
+});
 
 console.log(a_animes)
